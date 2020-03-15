@@ -3,12 +3,25 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Service Single</title>
+<title>Order Online</title>
 <!-- Stylesheets -->
 <link href="css/bootstrap.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
 <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
 <link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+
+ <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+
+
+
+
 <!-- Responsive -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -58,7 +71,7 @@
                                                 
                                             </li>
 
-                                                     <li><a href="serviceone.html">Order</a></li>
+                                                     <li><a href="serviceone.html">Order Online</a></li>
                                                     <!-- <li><a href="#">Faq's</a></li>
                                                     <li><a href="#">Pricing</a></li>
                                                     <li><a href="#">Our Team</a></li>
@@ -97,13 +110,13 @@
         	<div class="row clearfix">
             	<!--Title -->
             	<div class="title-column col-md-6 col-sm-8 col-xs-12">
-                	<h1>Service One</h1>
+                	<h1>Order Online</h1>
                 </div>
                 <!--Bread Crumb -->
                 <div class="breadcrumb-column col-md-6 col-sm-4 col-xs-12">
                     <ul class="bread-crumb clearfix">
                         <li><a href="index.html">Home</a></li>
-                        <li class="active">Service One</li>
+                        <li class="active">Order Online</li>
                     </ul>
                 </div>
             </div>
@@ -143,7 +156,28 @@ We’re a team of trend setters, mavericks and leaders: innovation is an inheren
                 <!--Content Column-->
                 <div class="content-column col-md-6 col-md-offset-1 col-sm-12 col-xs-12">
                 	<div class="contact-form">
-                        <form>
+
+
+
+
+
+
+
+
+
+
+<!--                        <form action="https://docs.google.com/forms/u/5/d/e/1FAIpQLSfW-fAfd9Vd1OW-8SVVaN26H8rIeXxZD_-qKXgpDSHpqWUyGA/formResponse" target="_self" method="POST">
+
+
+
+-->
+
+<script type="text/javascript">var submitted=false;</script>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"     
+onload="if(submitted) {window.location='https://saurabhkar.github.io/aaps/submit_confirmation.html';}"></iframe>
+      <form action="https://docs.google.com/forms/u/5/d/e/1FAIpQLSfW-fAfd9Vd1OW-8SVVaN26H8rIeXxZD_-qKXgpDSHpqWUyGA/formResponse" method="post" target="hidden_iframe" 
+onsubmit="submitted=true;">
+
                             <div class="row clearfix">
                                
                                
@@ -161,26 +195,64 @@ We’re a team of trend setters, mavericks and leaders: innovation is an inheren
                              </div>-->
                                     
                                 <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                 <label for="" style="color:#000 !important;">Your Name</label>
-                                    <input type="text" name="username" value="" placeholder="Your Name">
+                                 <label for="" style="color:#000 !important;">Your Name / नाम</label>
+                                    <input type="text" name="entry.1350079989" value="" placeholder="Your Name" required>
+                                </div>
+                                
+
+
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <label for="" style="color:#000 !important;">Mobile No. / फ़ोन </label>
+                                    <input type="text" name="entry.785163088" placeholder="Mobile No." pattern="[1-9]{1}[0-9]{9}" required>
+                                </div>
+                               
+
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <label for="" style="color:#000 !important;">Your Address/ पता </label>
+                                    <input type="text" name="entry.407707154" value="" placeholder="Your Address (With House number)" required>
+                                </div>
+
+
+
+
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <label for="" style="color:#000 !important;">Select the delivery time / वितरण समय का चयन करें </label></br>
+                                    <input type="radio" name="entry.1359905200" value="1" checked/> 9 AM - 10 AM </br>
+  <input type="radio" name="entry.1359905200" value="2" /> 1 PM - 2 PM </br>
+  <input type="radio" name="entry.1359905200" value="3"  /> 6 PM - 7 PM </br>
+                                </div>
+                               
+
+
+
+
+<!--
+
+<div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <label for="" style="color:#000 !important;">Select the date of delivery / दिनांक </label>
+
+<input type="text" id="datepicker">
+
+                                </div>
+
+
+-->
+
+
+
+
+
+
+
+                                 
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+ <label for="" style="color:#000 !important;">Order Details/ ऑर्डर का विवरण </label>
+                             
+                                    <textarea name="entry.1310886848" placeholder="Order Details(If multiple orders to be placed enter the details leaving one line after each order)" required></textarea>
                                 </div>
                                 
                                 <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                <label for="" style="color:#000 !important;">Your Email</label>
-                                    <input type="email" name="email" value="" placeholder="Your Email">
-                                </div>
-                                
-                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                <label for="" style="color:#000 !important;">Mobile No.</label>
-                                    <input type="tel" name="tel" value="" placeholder="Mobile No.">
-                                </div>
-                                
-                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                    <textarea name="message" placeholder="Your Message"></textarea>
-                                </div>
-                                
-                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                    <button type="submit" class="theme-btn btn-style-one">Send Message</button>
+                                    <button type="submit" class="theme-btn btn-style-one">Place Order</button>
                                 </div>
                                 
                             </div>
@@ -364,5 +436,38 @@ We’re a team of trend setters, mavericks and leaders: innovation is an inheren
 <script src="js/appear.js"></script>
 <script src="js/wow.js"></script>
 <script src="js/script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
