@@ -557,8 +557,8 @@ img{
 .main-header .main-box{
 	position:relative;
 	padding:0px 0px;
-	/*height:80px;
-	*/left:0px;
+	height:80px;
+	left:0px;
 	top:0px;
 	background-color:#000;
 	width:100%;
