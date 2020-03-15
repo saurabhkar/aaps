@@ -605,7 +605,7 @@ img{
 
 .main-header .main-box .logo-box{
 	position:relative;
-	float:left;
+	float:right;
 	left:0px;
 	z-index:10;
 	padding:0px 0px;
@@ -638,7 +638,7 @@ img{
 
 .main-header .nav-outer{
 	position:relative;
-	float:right;
+	float:center;
 }
 
 .main-menu{
@@ -5752,7 +5752,7 @@ line-height:450px;
 height:450px;*/
 	
 background:url(../images/bannerhead.png) left top no-repeat;
-height:450px;
+height:100%;
 
 }
 
