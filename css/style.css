@@ -2898,6 +2898,15 @@ img{
     background: url(../images/background/pattern-3.png) left top repeat;
 }
 
+
+/* Figcaption */
+
+figcaption {
+    color: #000;
+    padding: 7px;
+    text-align: center;
+}
+
 /*Pricing Column*/
 
 .pricing-column-two{
