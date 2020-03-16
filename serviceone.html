@@ -11,13 +11,43 @@
 <link rel="icon" href="images/favicon.png" type="image/x-icon">
 
 
- <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
-  $( function() {
-    $( "#datepicker" ).datepicker();
-  } );
-  </script>
+
+
+<script>
+function myFunction() {
+alert("inside my function");
+var d = new Date();
+var hour=Math.floor((d.getHours()))
+var minute=Math.floor((d.getMinutes()))
+//document.getElementById("h1").value=p;
+//document.getElementById("h2").value=q;
+
+if((hour<=10) ) 
+{
+document.getElementById("1").disabled=true;
+}
+else if ((hour<= 11 && q<= 0 ))
+{   
+document.getElementById("1").disabled=true;
+document.getElementById("2").disabled=true;
+}
+else{
+    document.getElementById("1").disabled=true;
+    document.getElementById("2").disabled=true;
+    document.getElementById("3").disabled=true;
+
+}
+</script>
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -30,7 +60,13 @@
 <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
 </head>
 
-<body>
+<!-- Changes in body tag done here -->
+
+
+<body onload = "myFunction();">
+
+
+
 
 <div class="page-wrapper">
  	
@@ -72,10 +108,7 @@
                                             </li>
 
                                                      <li><a href="serviceone.html">Order Online</a></li>
-                                                    <!-- <li><a href="#">Faq's</a></li>
-                                                    <li><a href="#">Pricing</a></li>
-                                                    <li><a href="#">Our Team</a></li>
-                                                    <li><a href="#">Error Page</a></li> -->
+                                                    
                                             
                                             
                                             <li><a href="contact.html">Contact Us</a></li>
@@ -120,7 +153,13 @@
                     </ul>
                 </div>
             </div>
+        </br></br></br>
+        <p> <h4> If you like to change or <strong>cancel</strong> the order kindly call the below mentioned number and provide the mobile number by which the order was placed. </p>
+            <p><h4>यदि आप ऑर्डर बदलना या रद्द करना चाहते हैं, तो कृपया नीचे उल्लेखित नंबर पर कॉल करें और वह मोबाइल नंबर प्रदान करें जिसके द्वारा ऑर्डर दिया गया था।</h4></p>
+            <h1> <a href="tel:5551234567"> <button type="button" class="btn btn-primary btn-lg" align="center  "> +919876543210 </button> </a>
+
         </div>
+
     </section>
     <!--End Page Title-->
     
@@ -165,13 +204,6 @@ We’re a team of trend setters, mavericks and leaders: innovation is an inheren
 
 
 
-
-<!--                        <form action="https://docs.google.com/forms/u/5/d/e/1FAIpQLSfW-fAfd9Vd1OW-8SVVaN26H8rIeXxZD_-qKXgpDSHpqWUyGA/formResponse" target="_self" method="POST">
-
-
-
--->
-
 <script type="text/javascript">var submitted=false;</script>
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"     
 onload="if(submitted) {window.location='https://saurabhkar.github.io/aaps/submit_confirmation.html';}"></iframe>
@@ -181,18 +213,6 @@ onsubmit="submitted=true;">
                             <div class="row clearfix">
                                
                                
-                               <!--<div class="form-group col-md-6 col-sm-6 co-xs-12">
-                              <label for="" style="color:#000 !important;">Work Area</label>
-                              <select class="form-control" placeholder="Work Area" required>
-                               <option>E-commerce</option>
-                               <option>Corporate</option>
-                               <option>Customized Web Application</option>
-                               <option>Mobile Application (Native/Hybrid)</option>
-                               <option>Designing</option>
-                               <option>Maintenance/Enhancement</option>
-                                
-                             </select>
-                             </div>-->
                                     
                                 <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                  <label for="" style="color:#000 !important;">Your Name / नाम</label>
@@ -214,19 +234,41 @@ onsubmit="submitted=true;">
 
 
 
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <label for="" style="color:#000 !important;">Pin code/ पिन कोड </label>
+                                    <input type="text" name="entry.1884208436" value="" placeholder="Your Pin Code" required>
+                                </div>
+
+
+
+
+
+
+
+
 
                                 <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                 <label for="" style="color:#000 !important;">Select the delivery time / वितरण समय का चयन करें </label></br>
 
 
-                                    <input type="radio" name="entry.1359905200" value = "9 AM - 10 AM"/> 9 AM - 10 AM  </br>
+                                    <input type="radio" name="entry.1359905200" id="1" value = "9 AM - 10 AM" onClick="myFunction();" /> 9 AM - 10 AM  </br>
 
 
-                                    <input type="radio" name="entry.1359905200" value = "1 PM - 2 PM"/> 1 PM - 2 PM </br>
+                                    <input type="radio" name="entry.1359905200" id= "2" value = "1 PM - 2 PM" onClick="myFunction();" /> 1 PM - 2 PM </br>
 
-                                    <input type="radio" name="entry.1359905200" value = "6 PM - 7 PM"/> 6 PM - 7 PM  </br>
+                                    <input type="radio" name="entry.1359905200" id = "3" value = "6 PM - 7 PM" onClick="myFunction();" /> 6 PM - 7 PM  </br>
+
 
 <input type="hidden" name="entry.1359905200"/>
+
+
+
+
+
+
+
+
+
 
  </div>
                                
@@ -258,8 +300,20 @@ onsubmit="submitted=true;">
                                 </div>
                                 
                                 <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                    <button type="submit" class="theme-btn btn-style-one">Place Order</button>
-                                </div>
+                           <button type="submit" class="theme-btn btn-style-one">Place Order</button>
+                 
+
+
+
+
+
+
+
+
+
+
+
+        </div>
                                 
                             </div>
                         </form>
@@ -442,7 +496,6 @@ onsubmit="submitted=true;">
 <script src="js/appear.js"></script>
 <script src="js/wow.js"></script>
 <script src="js/script.js"></script>
-
 
 
 
