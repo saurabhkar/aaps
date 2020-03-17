@@ -5,49 +5,75 @@
 <meta charset="utf-8">
 <title>Order Online</title>
 <!-- Stylesheets -->
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
-<link rel="icon" href="images/favicon.png" type="image/x-icon">
 
 
-
-
-<script>
-function myFunction() {
-alert("inside my function");
-var d = new Date();
-var hour=Math.floor((d.getHours()))
-var minute=Math.floor((d.getMinutes()))
-//document.getElementById("h1").value=p;
-//document.getElementById("h2").value=q;
-
-if((hour<=10) ) 
+<script language="javascript" type="text/javascript">
+function disdate()
 {
-document.getElementById("1").disabled=true;
-}
-else if ((hour<= 11 && q<= 0 ))
-{   
-document.getElementById("1").disabled=true;
-document.getElementById("2").disabled=true;
-}
-else{
-    document.getElementById("1").disabled=true;
-    document.getElementById("2").disabled=true;
-    document.getElementById("3").disabled=true;
+var today = new Date(); 
+var hours = today.getHours();
+var dd = today.getDate();
+hours = 17;
+var mm = today.getMonth()+1; 
+var yyyy = today.getFullYear();
+if(dd<10) 
+{
+    dd='0'+dd;
+} 
 
+if(mm<10) 
+{
+    mm='0'+mm;
+} 
+today = yyyy+'-'+mm+'-'+dd;
+
+var form = document.getElementById('orderform');
+var dateenter = form.elements.startdate.value;
+
+if(dateenter == today){
+if (hours < 7) {
+    document.getElementById("r2").checked = true;
+    document.getElementById("r3").checked = true;
+    document.getElementById("r1").checked = true;
+} else if (hours > 7 && hours < 11) {
+    document.getElementById("r1").disabled = true;
+    document.getElementById("r3").checked = true;
+    document.getElementById("r2").checked = true;
+} else if (hours >11 && hours < 18) {
+    document.getElementById("r1").disabled = true;
+    document.getElementById("r2").disabled = true;
+    document.getElementById("r3").checked = true;
 }
+else if (hours > 18) {
+    document.getElementById("r1").disabled = true;
+    document.getElementById("r2").disabled = true;
+    document.getElementById("r3").disabled = true;
+}
+}
+else if (dateenter != today){
+    document.getElementById("r1").disabled = false;
+    document.getElementById("r2").disabled = false;
+    document.getElementById("r3").disabled = false; 
+}
+}
+</script>
+
+
+
+<script type="text/javascript">
+    function submitClick() {
+      alert("Thank you for your time! Your details have been submitted!");
+     }
 </script>
 
 
 
 
 
-
-
-
-
-
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+<link rel="icon" href="images/favicon.png" type="image/x-icon">
 
 
 
@@ -61,9 +87,7 @@ else{
 </head>
 
 <!-- Changes in body tag done here -->
-
-
-<body onload = "myFunction();">
+<body>
 
 
 
@@ -207,8 +231,7 @@ We’re a team of trend setters, mavericks and leaders: innovation is an inheren
 <script type="text/javascript">var submitted=false;</script>
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"     
 onload="if(submitted) {window.location='https://saurabhkar.github.io/aaps/submit_confirmation.html';}"></iframe>
-      <form action="https://docs.google.com/forms/u/5/d/e/1FAIpQLSfW-fAfd9Vd1OW-8SVVaN26H8rIeXxZD_-qKXgpDSHpqWUyGA/formResponse" method="post" target="hidden_iframe" 
-onsubmit="submitted=true;">
+      <form action="https://docs.google.com/forms/u/5/d/e/1FAIpQLSfW-fAfd9Vd1OW-8SVVaN26H8rIeXxZD_-qKXgpDSHpqWUyGA/formResponse" id="orderform" method="post" target="hidden_iframe" onsubmit="submitted=true;" >
 
                             <div class="row clearfix">
                                
@@ -240,38 +263,35 @@ onsubmit="submitted=true;">
                                 </div>
 
 
-
-
-
-
-
-
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                               <label for="" style="color:#000 !important;">Delivery date / डिलीवरी की तारीख
+ </label></br>
+                                
+                                <input type="date" id="startdate" name="entry.1885940400" id="mydate"
+                                  min="2020-03-01" max="2020-12-31" required>
+</div>
 
                                 <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                <label for="" style="color:#000 !important;">Select the delivery time / वितरण समय का चयन करें </label></br>
+                                <label class ="label_radio" for="radio-01" style="color:#000 !important;">Select the delivery time / वितरण समय का चयन करें </label></br>
+                                    <input name="entry.1359905200" id="r1" type="radio"    value = "9 AM - 10 AM" required/> 9 AM - 10 AM  </br>
 
 
-                                    <input type="radio" name="entry.1359905200" id="1" value = "9 AM - 10 AM" onClick="myFunction();" /> 9 AM - 10 AM  </br>
+                                    <input name="entry.1359905200" id= "r2" type="radio"    value = "1 PM - 2 PM" required /> 1 PM - 2 PM </br>
 
-
-                                    <input type="radio" name="entry.1359905200" id= "2" value = "1 PM - 2 PM" onClick="myFunction();" /> 1 PM - 2 PM </br>
-
-                                    <input type="radio" name="entry.1359905200" id = "3" value = "6 PM - 7 PM" onClick="myFunction();" /> 6 PM - 7 PM  </br>
+                                    <input name="entry.1359905200" id = "r3" type="radio"    value = "6 PM - 7 PM" required/> 6 PM - 7 PM  </br>
 
 
 <input type="hidden" name="entry.1359905200"/>
-
-
-
-
-
-
-
-
-
-
  </div>
                                
+<script type="text/javascript">
+    myVar = setInterval(disdate, 30);
+</script> 
+
+
+
+
+
 
 
 
@@ -298,9 +318,10 @@ onsubmit="submitted=true;">
                              
                                     <textarea name="entry.1310886848" placeholder="Order Details(If multiple orders to be placed enter the details leaving one line after each order)" required></textarea>
                                 </div>
-                                
+
+                      
                                 <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                           <button type="submit" class="theme-btn btn-style-one">Place Order</button>
+                           <button type="submit" class="theme-btn btn-style-one" onclick="disdate(); return confirm('Sure?')">Place Order</button>
                  
 
 
