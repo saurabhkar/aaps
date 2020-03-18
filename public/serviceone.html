@@ -33,20 +33,20 @@ var form = document.getElementById('orderform');
 var dateenter = form.elements.startdate.value;
 
 if(dateenter == today){
-if (ordertime < "7:30") {
+if (ordertime < "07:30") {
     document.getElementById("r2").checked = true;
     document.getElementById("r3").checked = true;
     document.getElementById("r1").checked = true;
-} else if (hours > "7:30" && hours < "10:30") {
+} else if (ordertime > "07:30" && ordertime < "10:30") {
     document.getElementById("r1").disabled = true;
     document.getElementById("r3").checked = true;
     document.getElementById("r2").checked = true;
-} else if (hours > "10:30" && hours < "16:30") {
+} else if (ordertime > "10:30" && ordertime < "16:30") {
     document.getElementById("r1").disabled = true;
     document.getElementById("r2").disabled = true;
     document.getElementById("r3").checked = true;
 }
-else if (hours > "16:30") {
+else if (ordertime > "16:30") {
     document.getElementById("r1").disabled = true;
     document.getElementById("r2").disabled = true;
     document.getElementById("r3").disabled = true;
@@ -60,7 +60,18 @@ else if (dateenter != today){
 }
 </script>
 
+<script type="text/javascript">
+	function checkForm(form) // Submit button clicked
+  {
+    //
+    // check form input values
+    //
 
+    form.myButton.disabled = true;
+    form.myButton.value = "Please wait...";
+    return true;
+  }
+</script>
 
 <script type="text/javascript">
     function submitClick() {
@@ -198,8 +209,8 @@ else if (dateenter != today){
                 	<div class="contact-form">
 <script type="text/javascript">var submitted=false;</script>
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"     
-onload="if(submitted) {window.location='https://saurabhkar.github.io/aaps/submit_confirmation.html';}"></iframe>
-      <form action="https://docs.google.com/forms/u/5/d/e/1FAIpQLSfW-fAfd9Vd1OW-8SVVaN26H8rIeXxZD_-qKXgpDSHpqWUyGA/formResponse" id="orderform" method="post" target="hidden_iframe" onsubmit="submitted=true;" >
+onload="if(submitted) {window.location='submit_confirmation.html';}"></iframe>
+      <form action="https://docs.google.com/forms/u/5/d/e/1FAIpQLSfW-fAfd9Vd1OW-8SVVaN26H8rIeXxZD_-qKXgpDSHpqWUyGA/formResponse" id="orderform" method="post" target="hidden_iframe" onsubmit="submitted=true; return checkForm(this);" >
 
                             <div class="row clearfix">  
                                 <div class="form-group col-md-12 col-sm-12 col-xs-12">
@@ -214,6 +225,14 @@ onload="if(submitted) {window.location='https://saurabhkar.github.io/aaps/submit
                                     <input type="text" name="entry.785163088" placeholder="Mobile No." pattern="[1-9]{1}[0-9]{9}" required>
                                 </div>
                                
+
+                          <!--      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <label for="" style="color:#000 !important;">Email Address : Optional ( Fill up your email address if you would like to receive your order details )</label>
+                                    <input type="email" name="entry.785163088" placeholder="Email Address">
+                                </div>
+
+
+-->
 
                                 <div class="form-group col-md-12 col-sm-12 col-xs-12">
                                 <label for="" style="color:#000 !important;">Your Address/ पता </label>
@@ -261,7 +280,7 @@ onload="if(submitted) {window.location='https://saurabhkar.github.io/aaps/submit
 
                       
                                 <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                           <button type="submit" class="theme-btn btn-style-one" onclick="disdate(); return confirm('Kindly press Ok to submit order and please wait for the confirmation page.')">Place Order</button>
+                           <input type="submit" name="myButton" class="theme-btn btn-style-one" onclick="disdate(); return confirm('Kindly press Ok to submit order and please wait for the confirmation page.')" value="Place Order"></button>
         </div>
     </div></form></div></div></div></div></section>
     <!--End Business Section-->

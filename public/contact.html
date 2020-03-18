@@ -14,6 +14,21 @@
 <link href="css/responsive.css" rel="stylesheet">
 <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+
+
+<script type="text/javascript">
+    function checkForm(form) // Submit button clicked
+  {
+    //
+    // check form input values
+    //
+
+    form.myButton.disabled = true;
+    form.myButton.value = "Sending Message Please Wait...";
+    return true;
+  }
+</script>
+
 </head>
 
 <body>
@@ -132,9 +147,9 @@
 
 <script type="text/javascript">var submitted=false;</script>
     <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"     
-onload="if(submitted) {window.location='https://saurabhkar.github.io/aaps/contact_confirmation.html';}"></iframe>
+onload="if(submitted) {window.location='contact_confirmation.html';}"></iframe>
       <form action="https://docs.google.com/forms/u/5/d/e/1FAIpQLScAOzvF6FB93cqe92j2wzIJjAhkPC2riLTMk5nLsIFEAPBarw/formResponse" method="post" target="hidden_iframe" 
-onsubmit="submitted=true;">
+onsubmit="submitted=true;return checkForm(this);">
 
 
 
@@ -153,7 +168,7 @@ onsubmit="submitted=true;">
                                 </div>
                                 
                                 <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                                    <button type="submit" class="theme-btn btn-style-one">Send Message</button>
+                                    <input type="submit" name="myButton" class="theme-btn btn-style-one" value="Send Message"></button>
                                 </div>
                                 
                             </div>
