@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Order Online</title>
+<!-- Stylesheets -->
+
+<script language="javascript" type="text/javascript">
+function disdate()
+{
+var today = new Date(); 
+var hours = today.getHours();
+var min = today.getMinutes();
+var dd = today.getDate();
+var mm = today.getMonth()+1; 
+var yyyy = today.getFullYear();
+if(dd<10) 
+{
+    dd='0'+dd;
+} 
+
+if(mm<10) 
+{
+    mm='0'+mm;
+} 
+today = yyyy+'-'+mm+'-'+dd;
+
+ordertime = hours+':'+min;
+
+
+var form = document.getElementById('orderform');
+var dateenter = form.elements.startdate.value;
+
+if(dateenter == today){
+if (ordertime < "07:30") {
+    document.getElementById("r2").checked = true;
+    document.getElementById("r3").checked = true;
+    document.getElementById("r1").checked = true;
+} else if (ordertime > "07:30" && ordertime < "10:30") {
+    document.getElementById("r1").disabled = true;
+    document.getElementById("r3").checked = true;
+    document.getElementById("r2").checked = true;
+} else if (ordertime > "10:30" && ordertime < "16:30") {
+    document.getElementById("r1").disabled = true;
+    document.getElementById("r2").disabled = true;
+    document.getElementById("r3").checked = true;
+}
+else if (ordertime > "16:30") {
+    document.getElementById("r1").disabled = true;
+    document.getElementById("r2").disabled = true;
+    document.getElementById("r3").disabled = true;
+}
+}
+else if (dateenter != today){
+    document.getElementById("r1").disabled = false;
+    document.getElementById("r2").disabled = false;
+    document.getElementById("r3").disabled = false; 
+}
+}
+</script>
+
+<script type="text/javascript">
+	function checkForm(form) // Submit button clicked
+  {
+    //
+    // check form input values
+    //
+
+    form.myButton.disabled = true;
+    form.myButton.value = "Please wait...";
+    return true;
+  }
+</script>
+
+<script type="text/javascript">
+    function submitClick() {
+      alert("Thank you for your time! Your details have been submitted!");
+     }
+</script>
+
+
+
+
+
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+<link rel="icon" href="images/favicon.png" type="image/x-icon">
+
+
+
+
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link href="css/responsive.css" rel="stylesheet">
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+<!-- Changes in body tag done here -->
+<body>
+<div class="page-wrapper">
+    <!-- Preloader -->
+    <div class="preloader"></div>
+    <!-- Main Header-->
+    <header class="main-header">
+        
+                    <!-- Main Box -->
+                    <div class="main-box">
+                       <div class="auto-container">
+                           <div class="outer-container clearfix">
+                            <!--Logo Box-->
+                            <div class="logo-box">
+                                <div class="logo"><a href="index.html"><img src="images/logo1.png" alt=""></a></div>
+                            </div>
+                            
+                            <!--Nav Outer-->
+                            <div class="nav-outer clearfix">
+                                <!-- Main Menu -->
+                                <nav class="main-menu">
+                                    <div class="navbar-header">
+                                        <!-- Toggle Button -->    	
+                                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                            <span class="icon-bar"></span>
+                                        </button>
+                                    </div>
+                                    
+                                    <div class="navbar-collapse collapse clearfix">
+                                        <ul class="navigation clearfix">
+                                            <li class="current"><a href="index.html">Home</a>
+                                                
+                                            </li>
+                                            <li><a href="about.html">About Us</a>
+                                                
+                                            </li>
+
+                                                     <li><a href="serviceone.html">Order Online</a></li>
+                                                    
+                                            
+                                            
+                                            <li><a href="contact.html">Contact Us</a></li>
+                                             <li><a href="#" style="font-size: 23px; color: #ff7e00; line-height: 40px;"><i class="fa fa-mobile" aria-hidden="true"></i> +91-8789522717</a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                                <!-- Main Menu End-->
+                                
+                                <!--Right Info-->
+                                <div class="info-options">
+                                    <!--Info Block-->
+                                    <div class="info-block clearfix">
+                                        <!--Search Box-->
+        
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <!--Nav Outer End-->
+                            
+                        </div>    
+                    </div>
+                </div>
+        
+            </header>
+    <!--End Main Header -->
+    
+    <!--Page Title-->
+    <section class="page-title">
+    	<div class="auto-container">
+        	<div class="row clearfix">
+            	<!--Title -->
+            	<div class="title-column col-md-6 col-sm-8 col-xs-12">
+                	<h1>Order Online</h1>
+                </div>
+
+
+                <!--Bread Crumb -->
+   
+
+                <div class="breadcrumb-column col-md-6 col-sm-4 col-xs-12">
+                    <ul class="bread-crumb clearfix">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">Order Online</li>
+                    </ul>
+                </div>
+            </div>
+  
+
+   <!--     </br></br></br>
+       <p> <h4> If you like to change or <strong>cancel</strong> the order kindly call the below mentioned number and provide the mobile number by which the order was placed. </p>
+            <p><h4>यदि आप ऑर्डर बदलना या रद्द करना चाहते हैं, तो कृपया नीचे उल्लेखित नंबर पर कॉल करें और वह मोबाइल नंबर प्रदान करें जिसके द्वारा ऑर्डर दिया गया था।</h4></p>
+            <h1> <a href="tel:5551234567"> <button type="button" class="btn btn-primary btn-lg" align="center  "> +918789522717 </button> </a>
+   -->
+</div>
+    </section>
+    <!--End Page Title-->
+    
+    <!--Business Section-->
+    <section class="business-section">
+    	<div class="auto-container">
+        	<div class="row clearfix">
+                
+                <!--Content Column-->
+                <div class="content-column col-md-6 col-md-offset-1 col-sm-12 col-xs-12">
+                	<div class="contact-form">
+<script type="text/javascript">var submitted=false;</script>
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"     
+onload="if(submitted) {window.location='submit_confirmation.html';}"></iframe>
+      <form action="https://docs.google.com/forms/u/5/d/e/1FAIpQLSfW-fAfd9Vd1OW-8SVVaN26H8rIeXxZD_-qKXgpDSHpqWUyGA/formResponse" id="orderform" method="post" target="hidden_iframe" onsubmit="submitted=true; return checkForm(this);" >
+
+                            <div class="row clearfix">  
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                 <label for="" style="color:#000 !important;">Your Name / नाम</label>
+                                    <input type="text" name="entry.1350079989" value="" placeholder="Your Name" required>
+                                </div>
+                                
+
+
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <label for="" style="color:#000 !important;">Mobile No. / फ़ोन </label>
+                                    <input type="text" name="entry.785163088" placeholder="Mobile No." pattern="[1-9]{1}[0-9]{9}" required>
+                                </div>
+                               
+
+                          <!--      <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <label for="" style="color:#000 !important;">Email Address : Optional ( Fill up your email address if you would like to receive your order details )</label>
+                                    <input type="email" name="entry.785163088" placeholder="Email Address">
+                                </div>
+
+
+-->
+
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <label for="" style="color:#000 !important;">Your Address/ पता </label>
+                                    <input type="text" name="entry.407707154" value="" placeholder="Your Address (With House number)" required>
+                                </div>
+
+
+
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <label for="" style="color:#000 !important;">Pin code/ पिन कोड </label>
+                                    <input type="text" name="entry.1884208436" value="" placeholder="Your Pin Code" required>
+                                </div>
+
+
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                               <label for="" style="color:#000 !important;">Delivery date / डिलीवरी की तारीख
+ </label><br>
+                                <input type="date" id="startdate" name="entry.1885940400" id="mydate"
+                                  min="2020-03-01" max="2020-12-31" required>
+                                </div>
+
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                                <label class ="label_radio" for="radio-01" style="color:#000 !important;">Select the delivery time / वितरण समय का चयन करें </label><br>
+                                    <input name="entry.1359905200" id="r1" type="radio"    value = "9 AM - 10 AM" required/> 9 AM - 10 AM  <br>
+
+
+                                    <input name="entry.1359905200" id= "r2" type="radio"    value = "1 PM - 2 PM" required /> 12 PM - 1 PM <br>
+
+                                    <input name="entry.1359905200" id = "r3" type="radio"    value = "6 PM - 7 PM" required/> 6 PM - 7 PM  <br>
+
+
+<input type="hidden" name="entry.1359905200"/>
+ </div>
+                               
+<script type="text/javascript">
+    myVar = setInterval(disdate, 30);
+</script> 
+
+                                 
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+ <label for="" style="color:#000 !important;">Order Details/ ऑर्डर का विवरण </label>
+                             
+                                    <textarea name="entry.1310886848" placeholder="Order Details(If multiple orders to be placed enter the details leaving one line after each order)" required></textarea>
+                                </div>
+
+                      
+                                <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                           <input type="submit" name="myButton" class="theme-btn btn-style-one" onclick="disdate(); return confirm('Kindly press Ok to submit order and please wait for the confirmation page.')" value="Place Order"></button>
+        </div>
+    </div></form></div></div></div></div></section>
+    <!--End Business Section-->
+    
+    <!--Main Footer-->
+    <footer class="main-footer">
+    	<!--footer upper-->
+    	<div class="footer-upper">
+           <div class="auto-container">
+            <div class="row clearfix">
+                <!--Big Column-->
+                <div class="big-column col-md-6 col-sm-12 col-xs-12">
+                    <div class="row clearfix">
+
+                        <!--Footer Column-->
+                        <div class="footer-column col-md-6 col-sm-6 col-xs-12">
+                            <div class="footer-widget about-widget">
+                               <!--  <h3><span class="theme_color">Become our </span>First Client <br></h3> -->
+                                 <h2>Social Link</h2>
+                                <ul class="social-icon-one">
+                                    <li><a href="#"><span class="fa fa-facebook"></span> Facebook</a></li>
+                                    <li><a href="#"><span class="fa fa-twitter"></span> Twitter</a></li>
+                                    <li><a href="#"><span class="fa fa-google-plus"></span>Google+</a></li>
+                                    <li><a href="#"><span class="fa fa-dribbble"></span>Dribble</a></li>
+                                    <li><a href="#"><span class="fa fa-git"></span>GitHub</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!--Footer Column-->
+                       
+
+
+ <div class="footer-column col-md-6 col-sm-6 col-xs-12">
+                            <div class="footer-widget links-widget">
+                                <h2>Our offerings</h2>
+                                <div class="widget-content">
+                                    <ul class="list">
+                                        <li><a href="#">E-commerce</a></li>
+                                        <li><a href="#">Parcel delivery</a></li>
+                                        <li><a href="#">No hidden charges</a></li>
+                                        <li><a href="#">User friendly</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <!--Big Column-->
+               <div class="big-column col-md-6 col-sm-12 col-xs-12">
+                    <div class="row clearfix">
+
+                        <div class="footer-column col-md-6 col-sm-6 col-xs-12">
+                            <div class="footer-widget address-widget">
+                                <h2>Our Address</h2>
+                                <div class="widget-content">
+                                    <ul class="list-style-two">
+                                        <li><span class="icon fa fa-map-marker"></span>Hata, Jamhsedpur</li>
+                                        <li><span class="icon fa fa-phone"></span>(+91) 8789522717</li>
+                                        <li><span class="icon">@</span>aapsandcompany@gmail.com</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Footer Upper-->
+
+    <!--footer bottom-->
+    <div class="footer-bottom">
+       <div class="auto-container">
+           <div class="copyright">&copy; 2020 <a href="index.html"></a> All Rights Reserved. </div>
+       </div>
+   </div>
+   <!--End Footer Bottom-->
+
+</footer>
+
+ </div>
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-long-arrow-up"></span></div>
+
+<script src="js/jquery.js"></script> 
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/jquery.fancybox-media.js"></script>
+<script src="js/owl.js"></script>
+<script src="js/appear.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
